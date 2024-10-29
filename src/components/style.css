@@ -1,0 +1,10 @@
+/* Swiper NEWS  START*/
+
+.swiper-news-pagination .swiper-pagination {
+    text-align: left; /* Pindahkan pagination ke kiri */
+    left: 0; /* Pastikan pagination berada di sebelah kiri */
+    right: auto; /* Nonaktifkan auto positioning ke kanan */
+    margin-left: 8px; /* Tambahkan margin agar pagination tidak terlalu mepet */
+  }
+  
+  /* Swiper NEWS  END*/

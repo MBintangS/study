@@ -1,0 +1,23 @@
+/* NAVBAR START */
+.mobile-menu-enter {
+    transform: translateY(-100%);
+  }
+
+  .mobile-menu-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: transform 300ms ease-in-out;
+  }
+  
+  .mobile-menu-exit {
+    transform: translateY(0);
+  }
+  
+  .mobile-menu-exit-active {
+    transform: translateY(-100%);
+    transition: transform 300ms ease-in-out;
+  }
+
+/* NAVBAR END */
+
+  
