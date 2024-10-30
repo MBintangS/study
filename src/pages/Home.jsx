@@ -8,14 +8,8 @@ import Testimonial from "../components/Testimonial";
 import Finder from "../components/Finder";
 import ArticleContainer from "../components/ArticleContainer";
 import HeroHome from "../components/HeroHome";
-import { useEffect, useState } from "react";
 
-const Home = () => {
-  const [userInput, setUserInput] = useState("");
-  const [selectedProvince, setSelectedProvince] = useState("");
-  const [selectedProgramType, setSelectedProgramType] = useState("");
-  const [selectedLevelOfStudy, setSelectedLevelOfStudy] = useState("");
-  
+const Home = () => {  
 
   return (
     <div className="bg-[#F0F3F6]">

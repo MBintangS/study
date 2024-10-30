@@ -10,13 +10,15 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import { Swiper } from "swiper/react";
 import { SwiperSlide } from "swiper/react";
+import { useNavigate } from "react-router-dom";
 
 const UpcomingEvents = () => {
+  const navigate = useNavigate()
   return (
         <div className="flex flex-col">
           <div className="flex justify-between items-center">
             <h2 className="text-2xl font-semibold">Upcoming Events</h2>
-            <p className="text-[#6AAFFF] text-xl ">View More</p>
+            <div className="text-[#6AAFFF] text-xl cursor-pointer" onClick={() => navigate("/campus-update")}>View More</div>
           </div>
           <Swiper
             pagination={{

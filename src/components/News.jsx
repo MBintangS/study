@@ -1,5 +1,5 @@
 import React from "react";
-import { Pagination } from "swiper/modules";
+import { Pagination, Autoplay } from "swiper/modules";
 
 import cuisine from "../assets/cuisine.webp";
 import culture from "../assets/culture.webp";
@@ -10,20 +10,28 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import { Swiper } from "swiper/react";
 import { SwiperSlide } from "swiper/react";
+import { useNavigate } from "react-router-dom";
 
 const News = () => {
+
+  const navigate = useNavigate()
+  
   return (
         <div className="flex flex-col">
           <div className="flex justify-between items-center">
             <h2 className="text-2xl font-semibold">News</h2>
-            <p className="text-[#6AAFFF] text-xl ">View More</p>
+            <p className="text-[#6AAFFF] text-xl cursor-pointer" onClick={() => navigate("/campus-update")}>View More</p>
           </div>
           <Swiper
             pagination={{
               clickable: true,
             }}
             loop={true}
-            modules={[Pagination]}
+            modules={[Pagination, Autoplay]}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+            }}
             className="mySwiper pb-5 mt-5 swiper-news-pagination"
           >
             <SwiperSlide className="h-[350px] cursor-pointer ">
