@@ -10,7 +10,6 @@ function Footer() {
       <div className="bg-dark_blue py-14 flex items-center px-5">
         <div className="max-w-7xl mx-auto w-full flex items-center">
           <div className="text-white w-full grid grid-cols-1 sm:grid-cols-2  gap-8">
-            
             <div className="gap-4 flex items-center cursor-default">
               <div className="max-w-24">
                 <img src={logo} alt="" />
@@ -42,22 +41,46 @@ function Footer() {
                   </p>
                 </div>
                 <div className="flex gap-2">
-                  <a href="https://www.instagram.com/ditjen.dikti/" target="_blank">
-                    <FaInstagram size={32}  />
+                  <a
+                    href="https://www.instagram.com/ditjen.dikti/"
+                    target="_blank"
+                    aria-label="Instagram"
+                  >
+                    <FaInstagram size={32} />
                   </a>
-                  <a href="https://www.facebook.com/ditjen.dikti/" target="_blank">
+                  <a
+                    href="https://www.facebook.com/ditjen.dikti/"
+                    target="_blank"
+                    aria-label="Facebook"
+                  >
                     <LuFacebook size={32} />
                   </a>
-                  <a href="https://x.com/ditjendikti" target="_blank">
+                  <a
+                    href="https://x.com/ditjendikti"
+                    target="_blank"
+                    aria-label="Twitter"
+                  >
                     <LuTwitter size={32} />
                   </a>
-                  <a href="https://www.tiktok.com/@ditjen.dikti" target="_blank">
+                  <a
+                    href="https://www.tiktok.com/@ditjen.dikti"
+                    target="_blank"
+                    aria-label="TikTok"
+                  >
                     <RiTiktokLine size={32} />
                   </a>
-                  <a href="https://www.youtube.com/@DitjenDiktiSIGAPMelayani" target="_blank">
+                  <a
+                    href="https://www.youtube.com/@DitjenDiktiSIGAPMelayani"
+                    target="_blank"
+                    aria-label="YouTube"
+                  >
                     <AiOutlineYoutube size={32} />
                   </a>
-                  <a href="https://open.spotify.com/show/2rSBEAUcH7hhlxoqseuo4n?si=cf7fa056bd5b40e3" target="_blank">
+                  <a
+                    href="https://open.spotify.com/show/2rSBEAUcH7hhlxoqseuo4n?si=cf7fa056bd5b40e3"
+                    target="_blank"
+                    aria-label="Spotify"
+                  >
                     <AiOutlineSpotify size={32} />
                   </a>
                 </div>
@@ -79,7 +102,6 @@ function Footer() {
                 </form>
               </div>
             </div>
-
           </div>
         </div>
       </div>
