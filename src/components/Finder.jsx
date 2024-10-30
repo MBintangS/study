@@ -107,6 +107,7 @@ const Finder = () => {
             {/* Type of Program */}
             <div className="col-span-1 custom-width-material-tailwind rounded-xl relative flex-row items-center justify-center cursor-pointer focus:outline-none bg-white py-3 w-full">
               <Select
+                aria-label="Type of Program"
                 className="font-medium border-none focus:border-none active:border-none cursor-pointer outline-none w-full"
                 labelProps={{
                   className: "after:border-none before:border-none",
@@ -133,6 +134,7 @@ const Finder = () => {
             {/* Level of Study */}
             <div className="col-span-1 custom-width-material-tailwind rounded-xl relative flex-row items-center justify-center cursor-pointer focus:outline-none bg-white py-3 w-full">
               <Select
+                aria-label="Level of Study"
                 className="font-medium border-none focus:border-none active:border-none cursor-pointer outline-none w-full"
                 labelProps={{
                   className: "after:border-none before:border-none",
@@ -165,6 +167,7 @@ const Finder = () => {
             {/* Location */}
             <div className="col-span-1 custom-width-material-tailwind rounded-xl relative flex-row items-center justify-center cursor-pointer focus:outline-none bg-white py-3 w-full">
               <Select
+                aria-label="Location"
                 className="font-medium border-none focus:border-none active:border-none cursor-pointer outline-none w-full"
                 labelProps={{
                   className: `after:border-none before:border-none`,
