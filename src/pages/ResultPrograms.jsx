@@ -370,7 +370,7 @@ const ResultPrograms = () => {
           />
         ))}
       </div>
-      <div className="flex justify-between max-w-6xl items-center w-full mx-auto px-8 pb-8">
+      <div className="flex flex-col gap-5 md:flex-row justify-between max-w-6xl items-center w-full mx-auto px-8 pb-8">
         <div>
           Showing {startItem} - {endItem} from {data.length}
         </div>
