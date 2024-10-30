@@ -8,6 +8,7 @@ const HeroCampusUpdate = () => {
           src="/banner-campus-update.webp"
           alt="banner-studyinindonesia"
           className="w-full h-auto"
+          width="1200" height="600" 
         />
         <div className="absolute inset-0 flex flex-col justify-center items-center text-white">
           <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold">

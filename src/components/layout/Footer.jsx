@@ -12,7 +12,7 @@ function Footer() {
           <div className="text-white w-full grid grid-cols-1 sm:grid-cols-2  gap-8">
             <div className="gap-4 flex items-center cursor-default">
               <div className="max-w-24">
-                <img src={logo} alt="" />
+                <img src={logo} alt="Logo" width={100} height={100} />
               </div>
               <div className="text-white gap-2 flex flex-col">
                 <div className="">

@@ -54,7 +54,7 @@ function Navbar() {
           <div className="flex w-full items-center gap-4 cursor-default justify-between md:justify-normal">
             <div className="gap-2 flex items-center cursor-pointer" onClick={() => [navigate("/")]}>
               <div className="max-w-10 md:max-w-14">
-                <img src={logo} alt="Logo" />
+                <img src={logo} alt="Logo" width={60} height={60} />
               </div>
               <div className="text-white">
                 <p className="text-xs font-medium">
@@ -67,7 +67,7 @@ function Navbar() {
               </div>
             </div>
             <div className="max-w-[42px] md:max-w-[64px] lg:max-w-[72px]">
-              <img src={logoStudyinIdn} alt="Study in Indonesia Logo" />
+              <img src={logoStudyinIdn} alt="Study in Indonesia Logo" width={72} height={72} />
             </div>
           </div>
 
