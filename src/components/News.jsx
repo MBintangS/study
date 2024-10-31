@@ -38,14 +38,14 @@ const News = () => {
               <img
                 src={cuisine}
                 alt=""
-                className="h-[240px] object-cover"
+                className="h-[240px] object-cover rounded-lg"
               />
               <p className="p-2 text-md w-full break-all h-[85px] line-clamp-3 overflow-hidden ">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quis pellentesque erat. Donec tincidunt venenatis dui, vitae lacinia mauris maximus.
               </p>
             </SwiperSlide>
             <SwiperSlide className="h-[350px]">
-              <img src={culture} alt="" className="h-[240px] border-black" />
+              <img src={culture} alt="" className="h-[240px] border-black rounded-lg" />
               <p className="p-3 text-md w-full break-all h-[90px] line-clamp-3 overflow-hidden">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quis pellentesque erat. Donec tincidunt venenatis dui, vitae lacinia mauris maximus.
               </p>
