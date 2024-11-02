@@ -1,6 +1,5 @@
 import { Chip } from "@material-tailwind/react";
 import React from "react";
-import logo from "../assets/ipb.png";
 import { GrLocation } from "react-icons/gr";
 import { PiGraduationCap, PiMoney } from "react-icons/pi";
 import { LuSchool } from "react-icons/lu";

@@ -1,5 +1,5 @@
 import { FaFacebook, FaInstagram } from "react-icons/fa6";
-import logo from "/logo.png";
+import logo from "/logo.webp";
 import { LuFacebook, LuTwitter } from "react-icons/lu";
 import { RiTiktokLine } from "react-icons/ri";
 import { AiOutlineSpotify, AiOutlineYoutube } from "react-icons/ai";

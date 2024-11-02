@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import logo from "/logo.png";
+import logo from "/logo.webp";
 import logoStudyinIdn from "../../assets/study-in-idn.png";
 import { LuSearch } from "react-icons/lu";
 import { CSSTransition } from "react-transition-group";
