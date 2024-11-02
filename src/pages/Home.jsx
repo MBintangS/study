@@ -7,14 +7,15 @@ import DiscoverMore from "../components/DiscoverMore";
 import Testimonial from "../components/Testimonial";
 import Finder from "../components/Finder";
 import ArticleContainer from "../components/ArticleContainer";
-import HeroHome from "../components/HeroHome";
+import logoBannerHome from "/hero-banner.webp"
+import Hero from "../components/Hero";
 
 const Home = () => {  
 
   return (
     <div className="bg-[#F0F3F6]">
       <Navbar />
-      <HeroHome />
+      <Hero imgBanner={logoBannerHome} />
       <Finder />
       <div className="bg-light_blue w-full h-[1250px] lg:h-[900px] mt-[150px] md:mt-[450px] relative flex flex-col items-center">
         <VideoPlayer className="absolute justify-center items-center top-[-100px] md:top-[-400px]" />

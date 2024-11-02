@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import HeroPrograms from "../components/HeroPrograms";
 import Navbar from "../components/layout/Navbar";
 import Finder from "../components/Finder";
 import CardProgram from "../components/CardProgram";
@@ -7,6 +6,8 @@ import Footer from "../components/layout/Footer";
 import Pagination from "../components/Pagination";
 import { useLocation } from "react-router-dom";
 import logo from "../assets/ipb.png";
+import Hero from "../components/Hero";
+import logoBannerResult from "/banner-programs.webp"
 
 const data = [
   {
@@ -352,7 +353,7 @@ const ResultPrograms = () => {
   return (
     <div className="bg-[#F0F3F6]">
       <Navbar />
-      <HeroPrograms />
+      <Hero imgBanner={logoBannerResult} />
       <div ref={topRef}></div>
       <Finder />
       <div className="max-w-6xl w-full mx-auto my-8 px-5 space-y-6">
