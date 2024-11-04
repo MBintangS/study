@@ -1,7 +1,4 @@
 import React from "react";
-import News from "./News";
-import UpcomingEvents from "./UpcomingEvents";
-import CampusUpdate from "./CampusUpdate";
 import Reveal from "../utils/Reveal";
 import ArticleCarousel from "./ArticleCarousel";
 

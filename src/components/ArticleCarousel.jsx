@@ -17,9 +17,9 @@ const ArticleCarousel = ({title, navigateTo, dataArticle, autoplayDelay=3000 }) 
   return (
     <div className="flex flex-col">
       <div className="flex justify-between items-center">
-        <h2 className="text-2xl font-semibold">{title}</h2>
+        <h2 className="text-xl md:text-2xl font-semibold">{title}</h2>
         <p
-          className="text-[#6AAFFF] text-xl cursor-pointer"
+          className="text-[#6AAFFF] text-base md:text-xl cursor-pointer"
           onClick={() => navigate(navigateTo)}
         >
           View More
@@ -38,11 +38,11 @@ const ArticleCarousel = ({title, navigateTo, dataArticle, autoplayDelay=3000 }) 
         className="mySwiper pb-5 mt-5 swiper-news-pagination"
       >
         {dataArticle.map((data, index) => (
-          <SwiperSlide className="h-[350px] cursor-pointer" key={index}>
+          <SwiperSlide className="h-[290px] md:h-[350px] cursor-pointer" key={index}>
             <img
               src={data.img}
               alt="Article Image"
-              className="h-[240px] object-cover rounded-lg"
+              className="w-full h-[180px] md:h-[240px] object-cover rounded-lg"
             />
             <p className="p-2 text-md w-full break-all h-[85px] line-clamp-3 overflow-hidden ">
               {data.caption}

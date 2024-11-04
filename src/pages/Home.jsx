@@ -9,8 +9,13 @@ import Finder from "../components/Finder";
 import ArticleContainer from "../components/ArticleContainer";
 import logoBannerHome from "/hero-banner.webp"
 import Hero from "../components/Hero";
+import { useEffect } from "react";
 
 const Home = () => {  
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="bg-[#F0F3F6]">

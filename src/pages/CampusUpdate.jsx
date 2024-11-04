@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
 import CardCampusUpdate from "../components/CardCampusUpdate";
@@ -6,6 +6,11 @@ import Hero from "../components/Hero";
 import BannerArticle from "/banner-campus-update.webp"
 
 const CampusUpdate = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
   return (
     <div className="bg-[#F0F3F6]">
       <Navbar />
