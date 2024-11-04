@@ -1,8 +1,8 @@
 import React from "react";
 
-const Hero = ({ imgBanner }) => {
+const Hero = ({ imgBanner, ref }) => {
   return (
-    <div className="w-full relative">
+    <div className="w-full relative" ref={ref}>
       <div className="relative">
         <img
           src={imgBanner}
