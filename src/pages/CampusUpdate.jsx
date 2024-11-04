@@ -3,7 +3,7 @@ import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
 import Hero from "../components/Hero";
 import BannerArticle from "/banner-campus-update.webp";
-import CardArticle from "../components/CardArticle";
+import CardArticle from "../components/article/CardArticle";
 
 import culture from "../assets/culture.webp";
 import Pagination from "../components/Pagination";

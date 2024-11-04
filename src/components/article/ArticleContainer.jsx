@@ -1,9 +1,9 @@
 import React from "react";
-import Reveal from "../utils/Reveal";
+import Reveal from "../../utils/Reveal";
 import ArticleCarousel from "./ArticleCarousel";
 
-import cuisine from "../assets/cuisine.webp";
-import culture from "../assets/culture.webp";
+import cuisine from "../../assets/cuisine.webp";
+import culture from "../../assets/culture.webp";
 
 const dataNews = [
   {

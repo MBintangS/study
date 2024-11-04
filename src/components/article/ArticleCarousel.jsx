@@ -1,7 +1,7 @@
 import React from "react";
 import { Pagination, Autoplay } from "swiper/modules";
 
-import "./style.css";
+import "../style.css";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
