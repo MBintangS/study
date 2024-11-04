@@ -7,7 +7,7 @@ import Pagination from "../components/Pagination";
 import { useLocation } from "react-router-dom";
 import logo from "../assets/ipb.png";
 import Hero from "../components/Hero";
-import logoBannerResult from "/banner-programs.webp"
+import logoBannerResult from "/banner-programs.webp";
 
 const data = [
   {
@@ -371,12 +371,14 @@ const ResultPrograms = () => {
           />
         ))}
       </div>
-      <div className="flex flex-col gap-5 md:flex-row justify-between max-w-6xl items-center w-full mx-auto px-8 pb-8">
-        <div>
-          Showing {startItem} - {endItem} from {data.length}
-        </div>
-        <Pagination pageCount={pageCount} onPageChange={handlePageChange} />
-      </div>
+      <Pagination
+        pageCount={pageCount}
+        onPageChange={handlePageChange}
+        startItem={startItem}
+        endItem={endItem}
+        totalItem={data.length}
+      />
+
       <Footer />
     </div>
   );

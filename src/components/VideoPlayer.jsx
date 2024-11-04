@@ -1,6 +1,5 @@
 import React from "react";
 import video from "/STUDY-IN-INDONESIA.mp4";
-import Reveal from "../utils/Reveal";
 
 const VideoPlayer = ({className}) => {
   return (

@@ -1,21 +1,26 @@
 import ReactPaginate from "react-paginate";
 import "./style.css";
 
-const Pagination = ({ pageCount, onPageChange }) => {
+const Pagination = ({ pageCount, onPageChange, startItem, endItem, totalItem }) => {
   return (
-    <ReactPaginate
-      pageCount={pageCount}
-      pageRangeDisplayed={3}
-      marginPagesDisplayed={2}
-      breakLabel="..."
-      previousLabel="Prev"
-      nextLabel="Next"
-      onPageChange={onPageChange}
-      containerClassName="pagination"
-      activeClassName="active"
-      breakClassName="break"
-      disabledClassName="disabled"
-    />
+    <div className="flex flex-col gap-5 md:flex-row justify-between max-w-6xl items-center w-full mx-auto px-8 pb-8">
+      <div>
+        Showing {startItem} - {endItem} from {totalItem}
+      </div>
+      <ReactPaginate
+        pageCount={pageCount}
+        pageRangeDisplayed={3}
+        marginPagesDisplayed={2}
+        breakLabel="..."
+        previousLabel="Prev"
+        nextLabel="Next"
+        onPageChange={onPageChange}
+        containerClassName="pagination"
+        activeClassName="active"
+        breakClassName="break"
+        disabledClassName="disabled"
+      />
+    </div>
   );
 };
 
