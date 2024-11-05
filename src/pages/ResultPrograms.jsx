@@ -8,6 +8,7 @@ import { useLocation } from "react-router-dom";
 import logo from "../assets/ipb.png";
 import Hero from "../components/Hero";
 import logoBannerResult from "/banner-programs.webp";
+import SkeletonCardProgram from "../components/skeleton/SkeletonCardProgram";
 
 const data = [
   {
@@ -350,6 +351,14 @@ const ResultPrograms = () => {
     }
   }, [currentPage]);
 
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false)
+    }, 5000);
+  },[])
+
   return (
     <div className="bg-[#F0F3F6]">
       <Navbar />
@@ -357,7 +366,11 @@ const ResultPrograms = () => {
       <div ref={topRef}></div>
       <Finder />
       <div className="max-w-6xl w-full mx-auto my-8 px-5 space-y-6">
-        {paginatedData.map((data, index) => (
+        {
+        isLoading ? (
+          <SkeletonCardProgram count={3} />
+        ):(
+          paginatedData.map((data, index) => (
           <CardProgram
             key={index}
             title={`${data.title} ${currentPage * itemsPerPage + index + 1}`}
@@ -368,7 +381,8 @@ const ResultPrograms = () => {
             typeOfPT={data.typeOfPT}
             cost={data.cost}
             link={data.link}
-          />
+          />)
+        
         ))}
       </div>
       <Pagination
