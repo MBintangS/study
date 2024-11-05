@@ -35,14 +35,14 @@ const ArticleCarousel = ({title, navigateTo, dataArticle, autoplayDelay=3000 }) 
           delay: autoplayDelay,
           disableOnInteraction: false,
         }}
-        className="mySwiper pb-5 mt-5 swiper-news-pagination"
+        className="mySwiper pb-5 mt-5 swiper-news-pagination rounded-lg"
       >
         {dataArticle.map((data, index) => (
           <SwiperSlide className="h-[290px] md:h-[350px] cursor-pointer" key={index}>
             <img
               src={data.img}
               alt="Article Image"
-              className="w-full h-[180px] md:h-[240px] object-cover rounded-lg"
+              className="w-full h-[180px] md:h-[240px] object-cover"
             />
             <p className="p-2 text-md w-full break-all h-[85px] line-clamp-3 overflow-hidden ">
               {data.caption}
