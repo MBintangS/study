@@ -1,6 +1,5 @@
 import React from "react";
 import { PiGlobe, PiGraduationCap, PiMicroscope } from "react-icons/pi";
-import { Link } from "react-router-dom";
 
 const WhyIndonesia = ({ className }) => {
   return (

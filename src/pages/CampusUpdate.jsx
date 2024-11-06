@@ -8,6 +8,7 @@ import CardArticle from "../components/article/CardArticle";
 import culture from "../assets/culture.webp";
 import Pagination from "../components/Pagination";
 import SkeletonCardArticle from "../components/skeleton/SkeletonCardArticle";
+import usePagination from "../hooks/usePagination";
 
 const data = [
   {
@@ -265,19 +266,16 @@ const CampusUpdate = () => {
 
   // Pagination
   const itemsPerPage = 10;
-  const [currentPage, setCurrentPage] = useState(0);
+  const {
+    currentPage,
+    pageCount,
+    handlePageChange,
+    startItem,
+    endItem,
+    paginatedData
+  } = usePagination(data, itemsPerPage);
 
-  const pageCount = Math.ceil(data.length / itemsPerPage);
-  const handlePageChange = ({ selected }) => setCurrentPage(selected);
-
-  const startItem = currentPage * itemsPerPage + 1;
-  const endItem = Math.min(startItem + itemsPerPage - 1, data.length);
-
-  const paginatedData = data.slice(
-    currentPage * itemsPerPage,
-    (currentPage + 1) * itemsPerPage
-  );
-
+  // Scroll to Top
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);

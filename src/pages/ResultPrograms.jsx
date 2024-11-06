@@ -9,6 +9,7 @@ import logo from "../assets/ipb.png";
 import Hero from "../components/Hero";
 import logoBannerResult from "/banner-programs.webp";
 import SkeletonCardProgram from "../components/skeleton/SkeletonCardProgram";
+import usePagination from "../hooks/usePagination";
 
 const data = [
   {
@@ -331,18 +332,14 @@ const ResultPrograms = () => {
 
   // Pagination
   const itemsPerPage = 10;
-  const [currentPage, setCurrentPage] = useState(0);
-
-  const pageCount = Math.ceil(data.length / itemsPerPage);
-  const handlePageChange = ({ selected }) => setCurrentPage(selected);
-
-  const startItem = currentPage * itemsPerPage + 1;
-  const endItem = Math.min(startItem + itemsPerPage - 1, data.length);
-
-  const paginatedData = data.slice(
-    currentPage * itemsPerPage,
-    (currentPage + 1) * itemsPerPage
-  );
+  const {
+    currentPage,
+    pageCount,
+    handlePageChange,
+    startItem,
+    endItem,
+    paginatedData,
+  } = usePagination(data, itemsPerPage);
 
   // Scroll to topRef element when currentPage changes
   useEffect(() => {
@@ -351,13 +348,14 @@ const ResultPrograms = () => {
     }
   }, [currentPage]);
 
-  const [isLoading, setIsLoading] = useState(true)
+  // make a fake loading
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     setTimeout(() => {
-      setIsLoading(false)
-    }, 5000);
-  },[])
+      setIsLoading(false);
+    }, 3000);
+  }, []);
 
   return (
     <div className="bg-[#F0F3F6]">
@@ -366,24 +364,23 @@ const ResultPrograms = () => {
       <div ref={topRef}></div>
       <Finder />
       <div className="max-w-6xl w-full mx-auto my-8 px-5 space-y-6">
-        {
-        isLoading ? (
+        {isLoading ? (
           <SkeletonCardProgram count={3} />
-        ):(
+        ) : (
           paginatedData.map((data, index) => (
-          <CardProgram
-            key={index}
-            title={`${data.title} ${currentPage * itemsPerPage + index + 1}`}
-            logoPT={data.logoPT}
-            namePT={data.namePT}
-            location={data.location}
-            levelStudy={data.levelStudy}
-            typeOfPT={data.typeOfPT}
-            cost={data.cost}
-            link={data.link}
-          />)
-        
-        ))}
+            <CardProgram
+              key={index}
+              title={`${data.title} ${currentPage * itemsPerPage + index + 1}`}
+              logoPT={data.logoPT}
+              namePT={data.namePT}
+              location={data.location}
+              levelStudy={data.levelStudy}
+              typeOfPT={data.typeOfPT}
+              cost={data.cost}
+              link={data.link}
+            />
+          ))
+        )}
       </div>
       <Pagination
         pageCount={pageCount}
