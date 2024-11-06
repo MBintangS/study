@@ -352,10 +352,11 @@ const ResultPrograms = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    setIsLoading(true);
     setTimeout(() => {
       setIsLoading(false);
     }, 3000);
-  }, []);
+  }, [keyword, programType, levelOfStudy, province]);
 
   return (
     <div className="bg-[#F0F3F6]">
@@ -364,6 +365,11 @@ const ResultPrograms = () => {
       <div ref={topRef}></div>
       <Finder />
       <div className="max-w-6xl w-full mx-auto my-8 px-5 space-y-6">
+        <div>
+          <strong>Keyword :</strong> {keyword ? keyword : ""}, <strong>Program Type :</strong>{" "}
+          {programType ? programType : "-"}, <strong>Level Study :</strong> {levelOfStudy ? levelOfStudy : "-"}
+          , <strong>Location :</strong> {province ? province : "-"}
+        </div>
         {isLoading ? (
           <SkeletonCardProgram count={3} />
         ) : (
