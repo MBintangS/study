@@ -1,0 +1,144 @@
+.article-content {
+    color: #333; /* Warna dasar teks */
+    font-size: 1rem; /* Ukuran font dasar */
+    line-height: 1.6; /* Jarak antar baris */
+  }
+  
+  /* Heading Styles */
+  .article-content h1 {
+    font-size: 2rem;
+    color: #1a202c;
+    font-weight: bold;
+    margin: 1.5rem 0 1rem;
+  }
+  
+  .article-content h2 {
+    font-size: 1.75rem;
+    color: #2d3748;
+    font-weight: bold;
+    margin: 1.5rem 0 1rem;
+  }
+  
+  .article-content h3 {
+    font-size: 1.5rem;
+    color: #4a5568;
+    font-weight: bold;
+    margin: 1.25rem 0 0.75rem;
+  }
+  
+  /* Paragraph */
+  .article-content p {
+    margin: 0 0 1rem;
+    color: #4a4a4a;
+  }
+  
+  /* Unordered List */
+  .article-content ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin: 1rem 0;
+  }
+  
+  .article-content ul li {
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Ordered List */
+  .article-content ol {
+    list-style-type: decimal;
+    padding-left: 1.5rem;
+    margin: 1rem 0;
+  }
+  
+  .article-content ol li {
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Blockquote */
+  .article-content blockquote {
+    border-left: 4px solid #3182ce; /* Garis vertikal di kiri */
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    color: #555;
+  }
+  
+  /* Anchor (link) */
+  .article-content a {
+    color: #3182ce;
+    text-decoration: underline;
+  }
+  
+  .article-content a:hover {
+    color: #2b6cb0;
+    text-decoration: none;
+  }
+  
+  /* Bold and Italics */
+  .article-content strong {
+    font-weight: bold;
+  }
+  
+  .article-content em {
+    font-style: italic;
+  }
+  
+  /* Image */
+  .article-content img {
+    max-width: 100%; /* Agar gambar tidak melewati lebar konten */
+    height: auto;
+    margin: 1rem 0;
+  }
+  
+  /* Responsive Table */
+  .article-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+  }
+  
+  .article-content th, .article-content td {
+    border: 1px solid #ddd;
+    padding: 0.75rem;
+  }
+  
+  .article-content th {
+    background-color: #f7fafc;
+    font-weight: bold;
+  }
+  
+  .article-content tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  /* Code block */
+  .article-content pre {
+    background: #f5f5f5;
+    padding: 1rem;
+    overflow-x: auto;
+    border-radius: 0.25rem;
+    margin: 1.5rem 0;
+  }
+  
+  .article-content code {
+    background: #edf2f7;
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.25rem;
+    color: #2d3748;
+    font-family: monospace;
+  }
+  
+  /* Horizontal Rule */
+  .article-content hr {
+    border: 0;
+    height: 1px;
+    background: #e2e8f0;
+    margin: 1.5rem 0;
+  }
+  
+  /* Small Text */
+  .article-content small {
+    font-size: 0.875rem;
+    color: #718096;
+  }
+  
