@@ -58,7 +58,7 @@ const ReadArticle = () => {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               {/* Main Article */}
               <div className="lg:col-span-2 space-y-4">
-                <h1 className="text-xl md:text-3xl font-bold">
+                <h1 className="text-2xl md:text-3xl font-bold">
                   Acquiring Temporary Medals from FISU World University Games
                   2021, Indonesian Students Win Two Medals in Wushu Sports
                 </h1>
