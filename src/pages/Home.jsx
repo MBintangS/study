@@ -6,7 +6,7 @@ import Step from "../components/Step";
 import DiscoverMore from "../components/DiscoverMore";
 import Testimonial from "../components/Testimonial";
 import Finder from "../components/Finder";
-import ArticleContainer from "../components/article/ArticleContainer";
+import ArticleContainer from "../components/articles/ArticleContainer";
 import logoBannerHome from "/hero-banner.webp"
 import Hero from "../components/Hero";
 import { useEffect } from "react";

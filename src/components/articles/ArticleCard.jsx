@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-const CardArticle = ({ img, caption, date, navigateTo = "/" }) => {
+const ArticleCard = ({ img, caption, date, navigateTo = "/" }) => {
   const navigate = useNavigate();
   return (
     <div
@@ -24,4 +24,4 @@ const CardArticle = ({ img, caption, date, navigateTo = "/" }) => {
   );
 };
 
-export default CardArticle;
+export default ArticleCard;
