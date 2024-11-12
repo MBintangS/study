@@ -19,13 +19,18 @@ const App = () => {
         <Route path="/search/" element={<ResultPrograms />} />
         
         <Route path="/news" element={<News />} />
-        <Route path="/upcoming-events" element={<UpcomingEvents />} />
-        <Route path="/campus-update" element={<CampusUpdate />} />
-        
-        <Route path="/read" element={<ReadArticle />} />
+        <Route path="/news/:id" element={<ReadArticle />} />
 
+        <Route path="/upcoming-events" element={<UpcomingEvents />} />
+        <Route path="/upcoming-events/:id" element={<ReadArticle />} />
+
+        <Route path="/campus-update" element={<CampusUpdate />} />
+        <Route path="/campus-update/:id" element={<ReadArticle />} />
+        
+        {/* <Route path="/read" element={<ReadArticle />} />
         <Route path="/admin" element={<Sidebar_copy />} />
-        <Route path="/admin/dashboard" element={<Dashboard />} />
+        <Route path="/admin/dashboard" element={<Dashboard />} /> */}
+
       </Routes>
     </>
   );

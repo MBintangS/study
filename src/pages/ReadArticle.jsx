@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
 import DOMPurify from "dompurify";
 
 import "../style/articleContent.css";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 const dataRead = `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vehicula urna at lorem auctor, ut interdum urna sodales. Nulla facilisi. Donec pharetra nisi sit amet dui tempor, non interdum nunc luctus. Morbi suscipit, urna sit amet interdum dictum, libero erat tincidunt lorem, a vestibulum lacus nulla eget justo.</p>
 
@@ -36,6 +38,21 @@ const dataRead = `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pe
 const ReadArticle = () => {
   const cleanContent = DOMPurify.sanitize(dataRead);
 
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const [path, setPath] = useState("");
+
+  useEffect(() => {
+    if (location.pathname.includes("news")) {
+      setPath("/news");
+    } else if (location.pathname.includes("upcoming-event")) {
+      setPath("/upcoming-event");
+    } else if (location.pathname.includes("campus-update")) {
+      setPath("/campus-update");
+    }
+  }, []);
+
   return (
     <>
       <div className="bg-gradient-to-b from-blue-200 to-blue-50">
@@ -43,16 +60,25 @@ const ReadArticle = () => {
         <div className="min-h-screen p-4">
           <div className="container mx-auto max-w-6xl bg-white shadow-lg rounded-lg p-6 space-y-8">
             {/* Breadcrumb */}
-            <nav className="text-sm text-blue-600 font-medium">
-              <a href="#" className="hover:underline">
-                Beranda
-              </a>{" "}
-              &gt;{" "}
-              <a href="#" className="hover:underline">
-                Campus Update
-              </a>{" "}
-              &gt; <span className="text-gray-600">Article</span>
-            </nav>
+            <div className="text-sm text-blue-600 font-medium">
+              <div className="flex gap-2">
+                <div
+                  className="hover:underline cursor-pointer"
+                  onClick={() => navigate("/")}
+                >
+                  Beranda
+                </div>
+                &gt;
+                <div
+                  className="hover:underline cursor-pointer"
+                  onClick={() => navigate(path)}
+                >
+                  {path.replace("/", "").replace("-", " ")}
+                </div>
+                &gt;
+                <div className="text-gray-600">article</div>
+              </div>
+            </div>
 
             {/* Article Section */}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">

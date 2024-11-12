@@ -26,8 +26,8 @@ const ArticleContainer = () => {
     <Reveal>
       <div className="max-w-6xl w-full mx-auto my-8 px-5">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          <ArticleCarousel title="News" navigateTo="/campus-update" dataArticle={dataNews} autoplayDelay={3000} />
-          <ArticleCarousel title="Upcoming Events" navigateTo="/campus-update" dataArticle={dataNews} autoplayDelay={4000} />
+          <ArticleCarousel title="News" navigateTo="/news" dataArticle={dataNews} autoplayDelay={3000} />
+          <ArticleCarousel title="Upcoming Events" navigateTo="/upcoming-events" dataArticle={dataNews} autoplayDelay={4000} />
           <ArticleCarousel title="Campus Update" navigateTo="/campus-update" dataArticle={dataNews} autoplayDelay={5000} />
         </div>
       </div>
