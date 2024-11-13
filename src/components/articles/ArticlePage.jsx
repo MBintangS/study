@@ -13,7 +13,7 @@ const ArticlePage = ({ title, bannerImage, data }) => {
     useEffect(() => {
       setTimeout(() => {
         setIsLoading(false);
-      }, 5000);
+      }, 3000);
     }, []);
   
     const topRef = useRef(null);
@@ -30,9 +30,9 @@ const ArticlePage = ({ title, bannerImage, data }) => {
     } = usePagination(data, itemsPerPage);
   
     // Scroll to Top
-    useEffect(() => {
-      window.scrollTo(0, 0);
-    }, []);
+    // useEffect(() => {
+    //   window.scrollTo(0, 0);
+    // }, []);
   
     // Scroll to topRef element when currentPage changes
     useEffect(() => {
@@ -58,7 +58,7 @@ const ArticlePage = ({ title, bannerImage, data }) => {
                 img={data.img}
                 caption={data.caption}
                 date={data.date}
-                navigateTo={data.navigateTo}
+                navigateTo={data.caption}
                 key={index}
               />
             ))

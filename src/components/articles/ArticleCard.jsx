@@ -1,11 +1,23 @@
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
-const ArticleCard = ({ img, caption, date, navigateTo = "/" }) => {
-  const navigate = useNavigate();
+const ArticleCard = ({ img, caption, date, navigateTo }) => {
+  const navigate = useNavigate()
+  const location = useLocation()
+
+  const handleNavigate = (id) => {
+    if (location.pathname.includes("news")) {
+      navigate(`/news/${id}`);
+    } else if (location.pathname.includes("upcoming-event")) {
+      navigate(`/upcoming-events/${id}`);
+    } else if (location.pathname.includes("campus-update")) {
+      navigate(`/campus-update/${id}`);
+    }
+  }
+
   return (
     <div
-      className="w-full bg-white rounded-xl cursor-pointer shadow-md p-6 my-4 space-y-6 hover:-translate-y-1 transition-all"
-      onClick={() => navigate(`${navigateTo}`)}
+      className="w-full bg-white rounded-xl cursor-pointer shadow-md p-4 my-4 space-y-6 hover:-translate-y-1 transition-all"
+      onClick={() => handleNavigate(navigateTo)}
     >
       <div className="flex flex-col md:flex-row w-full">
         <div className="w-[300px] h-[150px]">

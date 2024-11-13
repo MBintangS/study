@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
 import DOMPurify from "dompurify";
+import { FaStar } from "react-icons/fa";
 
 import "../style/articleContent.css";
-import { useLocation, useNavigate } from "react-router-dom";
-import { useEffect } from "react";
 
 const dataRead = `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vehicula urna at lorem auctor, ut interdum urna sodales. Nulla facilisi. Donec pharetra nisi sit amet dui tempor, non interdum nunc luctus. Morbi suscipit, urna sit amet interdum dictum, libero erat tincidunt lorem, a vestibulum lacus nulla eget justo.</p>
 
@@ -38,20 +38,24 @@ const dataRead = `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pe
 const ReadArticle = () => {
   const cleanContent = DOMPurify.sanitize(dataRead);
 
-  const navigate = useNavigate();
-  const location = useLocation();
+  const navigate = useNavigate()
+  const location = useLocation()
 
-  const [path, setPath] = useState("");
+  const [path, setPath] = useState("")
 
   useEffect(() => {
     if (location.pathname.includes("news")) {
       setPath("/news");
     } else if (location.pathname.includes("upcoming-event")) {
-      setPath("/upcoming-event");
+      setPath("/upcoming-events");
     } else if (location.pathname.includes("campus-update")) {
       setPath("/campus-update");
     }
   }, []);
+
+  // useEffect(() => {
+  //   window.scrollTo(0, 0);
+  // }, []);
 
   return (
     <>
@@ -99,8 +103,8 @@ const ReadArticle = () => {
                   dangerouslySetInnerHTML={{ __html: cleanContent }}
                 />
                 {/* More article content... */}
-                <div className="flex items-center text-sm text-gray-600 space-x-4">
-                  <span>🌟 3.0/5</span>
+                <div className="flex items-center text-sm text-gray-600 space-x-4 pt-4">
+                  <div className="flex gap-2 items-center"><FaStar size={20} className="text-yellow-600" /> <div>3.0/5</div></div>
                   <button className="text-blue-500 font-semibold hover:underline">
                     Ulas sekarang
                   </button>
@@ -115,7 +119,7 @@ const ReadArticle = () => {
                     Popular Campus Update
                   </h2>
                   <div className="space-y-4">
-                    {[1, 2].map((item) => (
+                    {[1, 2, 3].map((item) => (
                       <div key={item} className="flex gap-4">
                         <img
                           src="https://via.placeholder.com/100"
@@ -142,7 +146,7 @@ const ReadArticle = () => {
                     More Campus Update
                   </h2>
                   <div className="space-y-4">
-                    {[1, 2].map((item) => (
+                    {[1, 2, 3].map((item) => (
                       <div key={item} className="flex gap-4">
                         <img
                           src="https://via.placeholder.com/100"
