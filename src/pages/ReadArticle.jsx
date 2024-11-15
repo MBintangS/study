@@ -4,6 +4,9 @@ import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
 import DOMPurify from "dompurify";
 import { FaStar } from "react-icons/fa";
+import cuisine from "../assets/cuisine.webp"
+import logoBannerHome from "/hero-banner.webp"
+
 
 import "../style/articleContent.css";
 
@@ -38,10 +41,10 @@ const dataRead = `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pe
 const ReadArticle = () => {
   const cleanContent = DOMPurify.sanitize(dataRead);
 
-  const navigate = useNavigate()
-  const location = useLocation()
+  const navigate = useNavigate();
+  const location = useLocation();
 
-  const [path, setPath] = useState("")
+  const [path, setPath] = useState("");
 
   useEffect(() => {
     if (location.pathname.includes("news")) {
@@ -53,9 +56,9 @@ const ReadArticle = () => {
     }
   }, []);
 
-  // useEffect(() => {
-  //   window.scrollTo(0, 0);
-  // }, []);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>
@@ -85,7 +88,7 @@ const ReadArticle = () => {
             </div>
 
             {/* Article Section */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 xl:grid-cols-3 gap-8">
               {/* Main Article */}
               <div className="lg:col-span-2 space-y-4">
                 <h1 className="text-2xl md:text-3xl font-bold">
@@ -93,25 +96,32 @@ const ReadArticle = () => {
                   2021, Indonesian Students Win Two Medals in Wushu Sports
                 </h1>
                 <p className="text-gray-500">22 Desember 2023 | 13.00 WIB</p>
-                <img
-                  src="https://via.placeholder.com/600x300"
-                  alt="Article"
-                  className="w-full rounded-lg"
-                />
+                <div className="max-w-[650px] h-[200px] md:h-[300px]  mx-auto bg-gray-400 rounded-lg">
+                  <img
+                    // src="https://via.placeholder.com/600x300"
+                    src={logoBannerHome}
+                    alt="Article"
+                    className="w-full h-full object-cover rounded-lg"
+                  />
+                </div>
                 <div
                   className="article-content text-gray-700"
                   dangerouslySetInnerHTML={{ __html: cleanContent }}
                 />
-                {/* More article content... */}
-                <div className="flex items-center text-sm text-gray-600 space-x-4 pt-4">
-                  <div className="flex gap-2 items-center"><FaStar size={20} className="text-yellow-600" /> <div>3.0/5</div></div>
+
+                {/* Review section */}
+                <div className="flex items-center text-sm text-gray-600 space-x-4 pt-2">
+                  <div className="flex gap-2 items-center">
+                    <FaStar size={20} className="text-yellow-600" />{" "}
+                    <div>3.0/5</div>
+                  </div>
                   <button className="text-blue-500 font-semibold hover:underline">
                     Ulas sekarang
                   </button>
                 </div>
               </div>
 
-              {/* Sidebar */}
+              {/* side conten */}
               <div className="space-y-6">
                 {/* Popular Campus Update Section */}
                 <section>
@@ -121,13 +131,16 @@ const ReadArticle = () => {
                   <div className="space-y-4">
                     {[1, 2, 3].map((item) => (
                       <div key={item} className="flex gap-4">
+                        <div className="h-[100px] min-w-[100px] bg-gray-400 rounded-lg">
                         <img
-                          src="https://via.placeholder.com/100"
-                          alt="Popular Update"
-                          className="w-24 h-24 object-cover rounded-lg"
+                          // src="https://via.placeholder.com/100"
+                          src={cuisine}
+                          alt="More Update"
+                          className="w-full h-full object-cover rounded-lg"
                         />
-                        <div>
-                          <h3 className="text-sm font-semibold text-gray-800">
+                        </div>
+                        <div className="w-full flex flex-col justify-between py-1">
+                          <h3 className="w-full text-sm font-semibold text-gray-800 cursor-pointer hover:underline">
                             ISI Yogyakarta Raih Juara Harapan 2 untuk Kategori
                             Stan Terbaik di KMI-Expo XIV
                           </h3>
@@ -148,21 +161,24 @@ const ReadArticle = () => {
                   <div className="space-y-4">
                     {[1, 2, 3].map((item) => (
                       <div key={item} className="flex gap-4">
-                        <img
-                          src="https://via.placeholder.com/100"
-                          alt="More Update"
-                          className="w-24 h-24 object-cover rounded-lg"
-                        />
-                        <div>
-                          <h3 className="text-sm font-semibold text-gray-800">
-                            ISI Yogyakarta Raih Juara Harapan 2 untuk Kategori
-                            Stan Terbaik di KMI-Expo XIV
-                          </h3>
-                          <p className="text-xs text-gray-500">
-                            22 Desember 2023 | 13.00 WIB
-                          </p>
-                        </div>
+                      <div className="h-[100px] min-w-[100px] bg-gray-400 rounded-lg">
+                      <img
+                        // src="https://via.placeholder.com/100"
+                        src={cuisine}
+                        alt="More Update"
+                        className="w-full h-full object-cover rounded-lg"
+                      />
                       </div>
+                      <div className="w-full flex flex-col justify-between py-1">
+                        <h3 className="w-full text-sm font-semibold text-gray-800 cursor-pointer hover:underline">
+                          ISI Yogyakarta Raih Juara Harapan 2 untuk Kategori
+                          Stan Terbaik di KMI-Expo XIV
+                        </h3>
+                        <p className="text-xs text-gray-500">
+                          22 Desember 2023 | 13.00 WIB
+                        </p>
+                      </div>
+                    </div>
                     ))}
                   </div>
                 </section>
