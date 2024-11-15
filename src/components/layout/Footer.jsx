@@ -105,7 +105,7 @@ function Footer() {
           </div>
         </div>
       </div>
-      <div className="bg-[#00070F] text-center text-xs sm:text-sm  text-white py-2">
+      <div className="bg-[#00070F] text-center text-xs  text-white py-3 px-4">
         <p>
           Directorate General of Higher Education, Research, and Technology ©
           2024 All Right Reserved

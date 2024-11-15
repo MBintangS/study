@@ -19,8 +19,8 @@ const ArticleCard = ({ img, caption, date, navigateTo }) => {
       className="w-full bg-white rounded-xl cursor-pointer shadow-md p-4 my-4 space-y-6 hover:-translate-y-1 transition-all"
       onClick={() => handleNavigate(navigateTo)}
     >
-      <div className="flex flex-col md:flex-row w-full">
-        <div className="w-[300px] h-[150px]">
+      <div className="flex flex-col md:flex-row w-full gap-3">
+        <div className="max-w-[300px] min-w-[200px] h-[150px] mx-auto">
           <img
             src={img}
             alt="CampusUpdate"
