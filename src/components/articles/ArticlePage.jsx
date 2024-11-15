@@ -49,7 +49,9 @@ const ArticlePage = ({ title, bannerImage, data }) => {
           <h1 className="text-2xl md:text-4xl my-10 font-semibold text-center">
             {title}
           </h1>
-  
+
+        {/* Interface 1 */}
+        <div className='bg-white rounded-lg space-y-4 p-4'>
           {isLoading ? (
             <SkeletonCardArticle count={3} />
           ) : (
@@ -63,6 +65,22 @@ const ArticlePage = ({ title, bannerImage, data }) => {
               />
             ))
           )}
+        </div>
+
+        {/* Interface 2 */}
+        {/* {isLoading ? (
+            <SkeletonCardArticle count={3} />
+          ) : (
+            paginatedData.map((data, index) => (
+              <ArticleCard
+                img={data.img}
+                caption={data.caption}
+                date={data.date}
+                navigateTo={data.caption}
+                key={index}
+              />
+            ))
+          )} */}
         </div>
   
         <Pagination
