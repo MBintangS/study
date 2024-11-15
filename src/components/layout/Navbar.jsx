@@ -54,7 +54,7 @@ function Navbar() {
           <div className="flex w-full items-center gap-4 cursor-default justify-between md:justify-normal">
             <div className="gap-2 flex items-center cursor-pointer" onClick={() => [navigate("/")]}>
               <div className="max-w-10 md:max-w-14">
-                <img src={logo} alt="Logo" width={60} height={60} />
+                <img src={logo} alt="Logo" width={48} height={48} />
               </div>
               <div className="text-white">
                 <p className="text-xs font-medium">

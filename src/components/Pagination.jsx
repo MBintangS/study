@@ -3,8 +3,8 @@ import "./style.css";
 
 const Pagination = ({ pageCount, onPageChange, startItem, endItem, totalItem }) => {
   return (
-    <div className="flex flex-col gap-5 lg:flex-row justify-between max-w-6xl items-center w-full mx-auto px-8 pb-8">
-      <div >
+    <div className="flex flex-col gap-1 sm:gap-3 lg:flex-row justify-between max-w-6xl items-center w-full mx-auto px-8 pb-8">
+      <div className="pagination-summary">
         Showing {startItem} - {endItem} from {totalItem}
       </div>
       <ReactPaginate

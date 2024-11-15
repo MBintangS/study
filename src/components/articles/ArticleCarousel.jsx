@@ -19,7 +19,7 @@ const ArticleCarousel = ({title, navigateTo, dataArticle, autoplayDelay=3000 }) 
       <div className="flex justify-between items-center">
         <h2 className="text-xl md:text-2xl font-semibold">{title}</h2>
         <p
-          className="text-[#6AAFFF] text-base md:text-xl cursor-pointer"
+          className="text-[#6AAFFF] text-base md:text-xl cursor-pointer hover:underline"
           onClick={() => navigate(navigateTo)}
         >
           View More
