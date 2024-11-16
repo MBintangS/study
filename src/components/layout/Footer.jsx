@@ -7,18 +7,17 @@ import { AiOutlineSpotify, AiOutlineYoutube } from "react-icons/ai";
 function Footer() {
   return (
     <footer className="w-full bottom-0">
-      <div className="bg-dark_blue py-14 flex items-center px-5">
+      <div className="bg-dark_blue py-14 flex items-center px-5 sm:px-10">
         <div className="max-w-7xl mx-auto w-full flex items-center">
-          <div className="text-white w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3  gap-8">
+          <div className="text-white w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
             <div className="gap-4 flex items-center cursor-default">
-              <div className="max-w-24">
+              <div className="min-w-24">
                 <img src={logo} alt="Logo" width={100} height={100} />
               </div>
               <div className="text-white gap-2 flex flex-col">
                 <div className="">
-                  <p className="text-base font-medium">
-                    Directorate General of
-                    <br /> Higher Education, Research, and Technology
+                  <p className="text-base font-medium max-w-[300px]">
+                    Directorate General of Higher Education, Research, and Technology
                   </p>
                   <p className="text-xs">
                     Ministry of Education, Culture, Research, and Technology
