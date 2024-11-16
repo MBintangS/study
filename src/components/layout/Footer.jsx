@@ -9,7 +9,7 @@ function Footer() {
     <footer className="w-full bottom-0">
       <div className="bg-dark_blue py-14 flex items-center px-5">
         <div className="max-w-7xl mx-auto w-full flex items-center">
-          <div className="text-white w-full grid grid-cols-1 sm:grid-cols-2  gap-8">
+          <div className="text-white w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3  gap-8">
             <div className="gap-4 flex items-center cursor-default">
               <div className="max-w-24">
                 <img src={logo} alt="Logo" width={100} height={100} />
@@ -33,7 +33,7 @@ function Footer() {
               </div>
             </div>
 
-            <div className="flex flex-col xl:flex-row justify-between gap-8">
+            <div className="flex flex-col xl:flex-row col-span-1 xl:col-span-2 justify-around gap-8">
               <div className="flex flex-col gap-4">
                 <div>
                   <p className="text-base font-medium">
