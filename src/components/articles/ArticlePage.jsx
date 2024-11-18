@@ -6,15 +6,10 @@ import Hero from '../Hero';
 import Pagination from '../Pagination';
 import SkeletonCardArticle from '../skeleton/SkeletonCardArticle';
 import ArticleCard from './ArticleCard';
+import culture from "../../assets/culture.webp";
 
-const ArticlePage = ({ title, bannerImage, data }) => {
-    const [isLoading, setIsLoading] = useState(true);
 
-    useEffect(() => {
-      setTimeout(() => {
-        setIsLoading(false);
-      }, 3000);
-    }, []);
+const ArticlePage = ({ title, bannerImage, data, isLoading, isError, error }) => {
   
     const topRef = useRef(null);
   
@@ -51,7 +46,7 @@ const ArticlePage = ({ title, bannerImage, data }) => {
           </h1>
 
         {/* Interface 1 */}
-        <div className='bg-white rounded-lg space-y-4 p-4'>
+        {/* <div className='bg-white rounded-lg space-y-4 p-4'>
           {isLoading ? (
             <SkeletonCardArticle count={3} />
           ) : (
@@ -65,31 +60,36 @@ const ArticlePage = ({ title, bannerImage, data }) => {
               />
             ))
           )}
-        </div>
+        </div> */}
 
         {/* Interface 2 */}
-        {/* {isLoading ? (
+        {isLoading ? (
             <SkeletonCardArticle count={3} />
+          ) : isError ? (
+            error
           ) : (
             paginatedData.map((data, index) => (
               <ArticleCard
-                img={data.img}
-                caption={data.caption}
-                date={data.date}
-                navigateTo={data.caption}
+                img={culture}
+                caption={data.body}
+                date={data.id}
+                navigateTo={data.id}
                 key={index}
               />
             ))
-          )} */}
+          )}
         </div>
   
-        <Pagination
-          pageCount={pageCount}
-          onPageChange={handlePageChange}
-          startItem={startItem}
-          endItem={endItem}
-          totalItem={data.length}
-        />
+          {data && (
+            <Pagination
+              pageCount={pageCount}
+              onPageChange={handlePageChange}
+              startItem={startItem}
+              endItem={endItem}
+              totalItem={data.length}
+            />
+          )}
+        
   
         <Footer />
       </div>

@@ -1,255 +1,43 @@
-import ArticlePage from '../../components/articles/ArticlePage'
+import ArticlePage from "../../components/articles/ArticlePage";
 
 import BannerImage from "/banner-campus-update.webp";
-import culture from "../../assets/culture.webp";
-
-const data = [
-    {
-      img: culture,
-      caption:
-        "Acquiring Temporary Medals from FISU World University Games 2021, Indonesian Students Win Two Medals in Wushu Sports",
-      date: "Nov 13, 2023",
-      navigateTo: "/",
-    },
-    {
-      img: culture,
-      caption:
-        "Acquiring Temporary Medals from FISU World University Games 2021, Indonesian Students Win Two Medals in Wushu Sports",
-      date: "Nov 13, 2023",
-    },
-    {
-      img: culture,
-      caption:
-        "Acquiring Temporary Medals from FISU World University Games 2021, Indonesian Students Win Two Medals in Wushu Sports",
-      date: "Nov 13, 2023",
-      navigateTo: "/search",
-    },
-    {
-      img: culture,
-      caption:
-        "Acquiring Temporary Medals from FISU World University Games 2021, Indonesian Students Win Two Medals in Wushu Sports",
-      date: "Nov 13, 2023",
-      navigateTo: "/",
-    },
-    {
-      img: culture,
-      caption:
-        "Acquiring Temporary Medals from FISU World University Games 2021, Indonesian Students Win Two Medals in Wushu Sports",
-      date: "Nov 13, 2023",
-    },
-    {
-      img: culture,
-      caption:
-        "Acquiring Temporary Medals from FISU World University Games 2021, Indonesian Students Win Two Medals in Wushu Sports",
-      date: "Nov 13, 2023",
-      navigateTo: "/search",
-    },
-    {
-      img: culture,
-      caption:
-        "Acquiring Temporary Medals from FISU World University Games 2021, Indonesian Students Win Two Medals in Wushu Sports",
-      date: "Nov 13, 2023",
-      navigateTo: "/",
-    },
-    {
-      img: culture,
-      caption:
-        "Acquiring Temporary Medals from FISU World University Games 2021, Indonesian Students Win Two Medals in Wushu Sports",
-      date: "Nov 13, 2023",
-    },
-    {
-      img: culture,
-      caption:
-        "Acquiring Temporary Medals from FISU World University Games 2021, Indonesian Students Win Two Medals in Wushu Sports",
-      date: "Nov 13, 2023",
-      navigateTo: "/search",
-    },
-    {
-      img: culture,
-      caption:
-        "Acquiring Temporary Medals from FISU World University Games 2021, Indonesian Students Win Two Medals in Wushu Sports",
-      date: "Nov 13, 2023",
-      navigateTo: "/",
-    },
-    {
-      img: culture,
-      caption:
-        "Acquiring Temporary Medals from FISU World University Games 2021, Indonesian Students Win Two Medals in Wushu Sports",
-      date: "Nov 13, 2023",
-    },
-    {
-      img: culture,
-      caption:
-        "Acquiring Temporary Medals from FISU World University Games 2021, Indonesian Students Win Two Medals in Wushu Sports",
-      date: "Nov 13, 2023",
-      navigateTo: "/search",
-    },
-    {
-      img: culture,
-      caption:
-        "Acquiring Temporary Medals from FISU World University Games 2021, Indonesian Students Win Two Medals in Wushu Sports",
-      date: "Nov 13, 2023",
-      navigateTo: "/",
-    },
-    {
-      img: culture,
-      caption:
-        "Acquiring Temporary Medals from FISU World University Games 2021, Indonesian Students Win Two Medals in Wushu Sports",
-      date: "Nov 13, 2023",
-    },
-    {
-      img: culture,
-      caption:
-        "Acquiring Temporary Medals from FISU World University Games 2021, Indonesian Students Win Two Medals in Wushu Sports",
-      date: "Nov 13, 2023",
-      navigateTo: "/search",
-    },
-    {
-      img: culture,
-      caption:
-        "Acquiring Temporary Medals from FISU World University Games 2021, Indonesian Students Win Two Medals in Wushu Sports",
-      date: "Nov 13, 2023",
-      navigateTo: "/",
-    },
-    {
-      img: culture,
-      caption:
-        "Acquiring Temporary Medals from FISU World University Games 2021, Indonesian Students Win Two Medals in Wushu Sports",
-      date: "Nov 13, 2023",
-    },
-    {
-      img: culture,
-      caption:
-        "Acquiring Temporary Medals from FISU World University Games 2021, Indonesian Students Win Two Medals in Wushu Sports",
-      date: "Nov 13, 2023",
-      navigateTo: "/search",
-    },
-    {
-      img: culture,
-      caption:
-        "Acquiring Temporary Medals from FISU World University Games 2021, Indonesian Students Win Two Medals in Wushu Sports",
-      date: "Nov 13, 2023",
-      navigateTo: "/",
-    },
-    {
-      img: culture,
-      caption:
-        "Acquiring Temporary Medals from FISU World University Games 2021, Indonesian Students Win Two Medals in Wushu Sports",
-      date: "Nov 13, 2023",
-    },
-    {
-      img: culture,
-      caption:
-        "Acquiring Temporary Medals from FISU World University Games 2021, Indonesian Students Win Two Medals in Wushu Sports",
-      date: "Nov 13, 2023",
-      navigateTo: "/search",
-    },
-    {
-      img: culture,
-      caption:
-        "Acquiring Temporary Medals from FISU World University Games 2021, Indonesian Students Win Two Medals in Wushu Sports",
-      date: "Nov 13, 2023",
-      navigateTo: "/",
-    },
-    {
-      img: culture,
-      caption:
-        "Acquiring Temporary Medals from FISU World University Games 2021, Indonesian Students Win Two Medals in Wushu Sports",
-      date: "Nov 13, 2023",
-    },
-    {
-      img: culture,
-      caption:
-        "Acquiring Temporary Medals from FISU World University Games 2021, Indonesian Students Win Two Medals in Wushu Sports",
-      date: "Nov 13, 2023",
-      navigateTo: "/search",
-    },
-    {
-      img: culture,
-      caption:
-        "Acquiring Temporary Medals from FISU World University Games 2021, Indonesian Students Win Two Medals in Wushu Sports",
-      date: "Nov 13, 2023",
-      navigateTo: "/",
-    },
-    {
-      img: culture,
-      caption:
-        "Acquiring Temporary Medals from FISU World University Games 2021, Indonesian Students Win Two Medals in Wushu Sports",
-      date: "Nov 13, 2023",
-    },
-    {
-      img: culture,
-      caption:
-        "Acquiring Temporary Medals from FISU World University Games 2021, Indonesian Students Win Two Medals in Wushu Sports",
-      date: "Nov 13, 2023",
-      navigateTo: "/search",
-    },
-    {
-      img: culture,
-      caption:
-        "Acquiring Temporary Medals from FISU World University Games 2021, Indonesian Students Win Two Medals in Wushu Sports",
-      date: "Nov 13, 2023",
-      navigateTo: "/",
-    },
-    {
-      img: culture,
-      caption:
-        "Acquiring Temporary Medals from FISU World University Games 2021, Indonesian Students Win Two Medals in Wushu Sports",
-      date: "Nov 13, 2023",
-    },
-    {
-      img: culture,
-      caption:
-        "Acquiring Temporary Medals from FISU World University Games 2021, Indonesian Students Win Two Medals in Wushu Sports",
-      date: "Nov 13, 2023",
-      navigateTo: "/search",
-    },
-    {
-      img: culture,
-      caption:
-        "Acquiring Temporary Medals from FISU World University Games 2021, Indonesian Students Win Two Medals in Wushu Sports",
-      date: "Nov 13, 2023",
-      navigateTo: "/",
-    },
-    {
-      img: culture,
-      caption:
-        "Acquiring Temporary Medals from FISU World University Games 2021, Indonesian Students Win Two Medals in Wushu Sports",
-      date: "Nov 13, 2023",
-    },
-    {
-      img: culture,
-      caption:
-        "Acquiring Temporary Medals from FISU World University Games 2021, Indonesian Students Win Two Medals in Wushu Sports",
-      date: "Nov 13, 2023",
-      navigateTo: "/search",
-    },
-    {
-      img: culture,
-      caption:
-        "Acquiring Temporary Medals from FISU World University Games 2021, Indonesian Students Win Two Medals in Wushu Sports",
-      date: "Nov 13, 2023",
-      navigateTo: "/",
-    },
-    {
-      img: culture,
-      caption:
-        "Acquiring Temporary Medals from FISU World University Games 2021, Indonesian Students Win Two Medals in Wushu Sports",
-      date: "Nov 13, 2023",
-    },
-    {
-      img: culture,
-      caption:
-        "Acquiring Temporary Medals from FISU World University Games 2021, Indonesian Students Win Two Medals in Wushu Sports",
-      date: "Nov 13, 2023",
-      navigateTo: "/search",
-    },
-  ];
+import useQuery from "../../api/hooks/useQuery";
+import { tesApi } from "../../api/home";
+import { useEffect, useRef } from "react";
 
 const CampusUpdate = () => {
-  return (
-    <ArticlePage title="Campus Update" bannerImage={BannerImage} data={data} />
-  )
-}
+  const refetchCalled = useRef(false);
 
-export default CampusUpdate
+  const {
+    data: dataApi,
+    isLoading,
+    isError,
+    error,
+    refetch,
+  } = useQuery(tesApi, { autofetch: false });
+
+  useEffect(() => {
+    if (!refetchCalled.current) {
+      refetch();
+      refetchCalled.current = true;
+    }
+  }, []);
+  
+
+  return (
+    <>
+    {isLoading ? "..." : isError ? error : (
+      <ArticlePage
+        title="Campus Update"
+        bannerImage={BannerImage}
+        data={dataApi}
+        isLoading={isLoading}
+        isError={isError}
+        error={error}
+      />
+    )}
+    </>
+  );
+};
+
+export default CampusUpdate;
