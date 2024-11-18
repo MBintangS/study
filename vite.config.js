@@ -5,6 +5,8 @@ import react from '@vitejs/plugin-react'
 export default defineConfig(() => {
   return {
     plugins: [react()],
-    base: import.meta.env.VITE_API_URL
+    define: {
+      __APP_ENV__: process.env.VITE_VERCEL_ENV,
+    },
   }
 })
