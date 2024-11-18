@@ -26,16 +26,14 @@ const CampusUpdate = () => {
 
   return (
     <>
-    {isLoading ? "..." : isError ? error : (
       <ArticlePage
         title="Campus Update"
         bannerImage={BannerImage}
-        data={dataApi}
+        data={dataApi || []}
         isLoading={isLoading}
         isError={isError}
         error={error}
       />
-    )}
     </>
   );
 };
