@@ -30,10 +30,10 @@ const ArticlePage = ({
   } = usePagination(data, itemsPerPage);
 
   // Scroll to Top
-  useEffect(() => {
+  // useEffect(() => {
     // window.scrollTo(0, 0);
-    console.log(data)
-  }, []);
+    // console.log(data)
+  // }, []);
 
   // Scroll to topRef element when currentPage changes
   useEffect(() => {

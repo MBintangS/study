@@ -1,5 +1,6 @@
-import { Option, Select } from "@material-tailwind/react";
-import React, { useState } from "react";
+import { Option } from "@material-tailwind/react";
+import React, { useEffect, useState } from "react";
+import Select from "react-select";
 import { useNavigate } from "react-router-dom";
 
 const Provinsi = [
@@ -40,29 +41,62 @@ const Provinsi = [
   { id: 35, label: "Papua Tengah" },
 ];
 
+const TypeOfPrograms = [
+  { id: 1, label: "Degree Program" },
+  { id: 2, label: "Non-Degree Program" },
+];
+
+const LevelsOfStudy = [
+  { id: 1, label: "Undergraduate" },
+  { id: 2, label: "Postgraduate" },
+  { id: 3, label: "Postdoctoral" },
+];
+
 const Finder = () => {
   const [userInput, setUserInput] = useState("");
-  const [selectedProvince, setSelectedProvince] = useState("");
-  const [selectedProgramType, setSelectedProgramType] = useState("");
-  const [selectedLevelOfStudy, setSelectedLevelOfStudy] = useState("");
+  const [selectedProvince, setSelectedProvince] = useState(null);
+  const [selectedProgramType, setSelectedProgramType] = useState(null);
+  const [selectedLevelOfStudy, setSelectedLevelOfStudy] = useState(null);
   const [error, setError] = useState("");
 
   const navigate = useNavigate();
 
+  // Parse query string on component mount
+  useEffect(() => {
+    const queryParams = new URLSearchParams(location.search);
+
+    // Ambil keyword
+    const keyword = queryParams.get("keyword") || "";
+    setUserInput(keyword);
+
+    // Ambil province
+    const provinceLabel = queryParams.get("province");
+    if (provinceLabel) {
+      const province = Provinsi.find((data) => data.label === provinceLabel);
+      setSelectedProvince(province || null);
+    }
+
+    // Ambil programType
+    const programTypeLabel = queryParams.get("programType");
+    if (programTypeLabel) {
+      const programType = TypeOfPrograms.find(
+        (data) => data.label === programTypeLabel
+      );
+      setSelectedProgramType(programType || null);
+    }
+
+    // Ambil levelOfStudy
+    const levelOfStudyLabel = queryParams.get("levelOfStudy");
+    if (levelOfStudyLabel) {
+      const levelOfStudy = LevelsOfStudy.find(
+        (data) => data.label === levelOfStudyLabel
+      );
+      setSelectedLevelOfStudy(levelOfStudy || null);
+    }
+  }, [location.search]);
+
   const handleInputChange = (e) => {
     setUserInput(e.target.value);
-  };
-
-  const handleProvinceChange = (value) => {
-    setSelectedProvince(value);
-  };
-
-  const handleProgramTypeChange = (value) => {
-    setSelectedProgramType(value);
-  };
-
-  const handleLevelOfStudyChange = (value) => {
-    setSelectedLevelOfStudy(value);
   };
 
   const handleSubmit = (e) => {
@@ -75,11 +109,21 @@ const Finder = () => {
 
     setError("");
 
+    // Data id 
+    const apiPayload = {
+      keyword: userInput,
+      provinceId: selectedProvince?.id || null,
+      programTypeId: selectedProgramType?.id || null,
+      levelOfStudyId: selectedLevelOfStudy?.id || null,
+    };
+
+    console.log("Data:", apiPayload);
+
     const searchParams = new URLSearchParams({
       keyword: userInput,
-      province: selectedProvince,
-      programType: selectedProgramType,
-      levelOfStudy: selectedLevelOfStudy,
+      province: selectedProvince?.label || "",
+      programType: selectedProgramType?.label || "",
+      levelOfStudy: selectedLevelOfStudy?.label || "",
     });
 
     navigate(`/search?${searchParams.toString()}`);
@@ -95,97 +139,85 @@ const Finder = () => {
         {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
         <div className="grid grid-cols-1 lg:grid-cols-6 gap-4 items-center">
           {/* Input Text */}
-            <input
-              type="text"
-              className="col-span-1 lg:col-span-2 bg-white px-5 py-5 rounded-xl focus:outline-none w-full"
-              placeholder="Keyword"
-              value={userInput}
-              onChange={handleInputChange}
-            />
-          
+          <input
+            type="text"
+            className="col-span-1 lg:col-span-2 bg-white px-5 py-5 rounded-xl focus:outline-none w-full"
+            placeholder="Keyword"
+            value={userInput}
+            onChange={handleInputChange}
+          />
+
           <div className="grid grid-cols-1 md:grid-cols-3 col-span-1 lg:col-span-3 gap-4">
             {/* Type of Program */}
             <div className="col-span-1 custom-width-material-tailwind rounded-xl relative flex-row items-center justify-center cursor-pointer focus:outline-none bg-white py-3 w-full">
               <Select
-                aria-label="Type of Program"
-                className="font-medium border-none focus:border-none active:border-none cursor-pointer outline-none w-full"
-                labelProps={{
-                  className: "after:border-none before:border-none",
-                }}
-                label={selectedProgramType ? "" : "Type of Program"}
+                options={TypeOfPrograms}
+                getOptionLabel={(e) => e.label}
+                getOptionValue={(e) => e.id}
                 value={selectedProgramType}
-                onChange={handleProgramTypeChange}
-              >
-                <Option
-                  className="custom-select-material-tailwind rounded-md leading-none bg-white"
-                  value="Degree"
-                >
-                  Degree Program
-                </Option>
-                <Option
-                  className="custom-select-material-tailwind rounded-md leading-none bg-white"
-                  value="Non-Degree"
-                >
-                  Non-Degree Program
-                </Option>
-              </Select>
+                onChange={setSelectedProgramType}
+                placeholder="Type of Program"
+                styles={{
+                  control: (baseStyles) => ({
+                    ...baseStyles,
+                    border: "none", 
+                    boxShadow: "none",
+                    "&:hover": {
+                      border: "none",
+                    },
+                    backgroundColor: "transparent",
+                    fontSize: "14px"
+                  }),
+                }}
+              />
             </div>
 
             {/* Level of Study */}
             <div className="col-span-1 custom-width-material-tailwind rounded-xl relative flex-row items-center justify-center cursor-pointer focus:outline-none bg-white py-3 w-full">
               <Select
-                aria-label="Level of Study"
-                className="font-medium border-none focus:border-none active:border-none cursor-pointer outline-none w-full"
-                labelProps={{
-                  className: "after:border-none before:border-none",
-                }}
-                label={selectedLevelOfStudy ? "" : "Level of Study"}
+                options={LevelsOfStudy}
+                getOptionLabel={(e) => e.label}
+                getOptionValue={(e) => e.id}
                 value={selectedLevelOfStudy}
-                onChange={handleLevelOfStudyChange}
-              >
-                <Option
-                  className="custom-select-material-tailwind rounded-md leading-none bg-white"
-                  value="Undergraduate"
-                >
-                  Undergraduate
-                </Option>
-                <Option
-                  className="custom-select-material-tailwind rounded-md leading-none bg-white"
-                  value="Postgraduate"
-                >
-                  Postgraduate
-                </Option>
-                <Option
-                  className="custom-select-material-tailwind rounded-md leading-none bg-white"
-                  value="Postdoctoral"
-                >
-                  Postdoctoral
-                </Option>
-              </Select>
+                onChange={setSelectedLevelOfStudy}
+                placeholder="Level of Study"
+                styles={{
+                  control: (baseStyles) => ({
+                    ...baseStyles,
+                    border: "none", 
+                    boxShadow: "none",
+                    "&:hover": {
+                      border: "none",
+                    },
+                    backgroundColor: "transparent",
+                    fontSize: "14px"
+                  }),
+                }}
+              />
             </div>
 
             {/* Location */}
             <div className="col-span-1 custom-width-material-tailwind rounded-xl relative flex-row items-center justify-center cursor-pointer focus:outline-none bg-white py-3 w-full">
               <Select
-                aria-label="Location"
-                className="font-medium border-none focus:border-none active:border-none cursor-pointer outline-none w-full"
-                labelProps={{
-                  className: `after:border-none before:border-none`,
-                }}
-                label={selectedProvince ? "" : "location"}
+                options={Provinsi}
+                getOptionLabel={(e) => e.label}
+                getOptionValue={(e) => e.id}
                 value={selectedProvince}
-                onChange={handleProvinceChange}
-              >
-                {Provinsi.map((data) => (
-                  <Option
-                    className="custom-select-material-tailwind rounded-md leading-none bg-white"
-                    value={data.label}
-                    key={data.id}
-                  >
-                    {data.label}
-                  </Option>
-                ))}
-              </Select>
+                onChange={setSelectedProvince}
+                placeholder="Location"
+                styles={{
+                  control: (baseStyles) => ({
+                    ...baseStyles,
+                    border: "none", 
+                    boxShadow: "none",
+                    "&:hover": {
+                      border: "none",
+                    },
+                    backgroundColor: "transparent",
+                    fontSize: "14px"
+                  }),
+                }}
+              />
             </div>
           </div>
 

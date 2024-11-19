@@ -921,7 +921,7 @@ const ResultPrograms = () => {
   }, [keyword, province, programType, levelOfStudy]);
 
   const fetchAPI = (params) => {
-    console.log("Cari dengan Parameter:", params);
+    // console.log("Cari dengan Parameter:", params);
   };
 
   // Pagination
