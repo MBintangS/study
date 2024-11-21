@@ -112,18 +112,20 @@ const Finder = () => {
     // Data id 
     const apiPayload = {
       keyword: userInput,
-      provinceId: selectedProvince?.id || null,
       programTypeId: selectedProgramType?.id || null,
       levelOfStudyId: selectedLevelOfStudy?.id || null,
+      provinceId: selectedProvince?.id || null,
     };
+
+    console.log("selected: ", selectedProvince)
 
     console.log("Data:", apiPayload);
 
     const searchParams = new URLSearchParams({
       keyword: userInput,
-      province: selectedProvince?.label || "",
       programType: selectedProgramType?.label || "",
       levelOfStudy: selectedLevelOfStudy?.label || "",
+      province: selectedProvince?.label || "",
     });
 
     navigate(`/search?${searchParams.toString()}`);
@@ -166,7 +168,7 @@ const Finder = () => {
                       border: "none",
                     },
                     backgroundColor: "transparent",
-                    fontSize: "14px"
+                    fontSize: "0.85rem"
                   }),
                 }}
               />
@@ -190,7 +192,7 @@ const Finder = () => {
                       border: "none",
                     },
                     backgroundColor: "transparent",
-                    fontSize: "14px"
+                    fontSize: "0.85rem"
                   }),
                 }}
               />
@@ -214,7 +216,7 @@ const Finder = () => {
                       border: "none",
                     },
                     backgroundColor: "transparent",
-                    fontSize: "14px"
+                    fontSize: "0.85rem"
                   }),
                 }}
               />
