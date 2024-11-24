@@ -7,6 +7,7 @@ import Pagination from "../Pagination";
 import SkeletonCardArticle from "../skeleton/SkeletonCardArticle";
 import ArticleCard from "./ArticleCard";
 import culture from "../../assets/culture.webp";
+import Error from "../Error";
 
 const ArticlePage = ({
   title,
@@ -31,8 +32,8 @@ const ArticlePage = ({
 
   // Scroll to Top
   // useEffect(() => {
-    // window.scrollTo(0, 0);
-    // console.log(data)
+  // window.scrollTo(0, 0);
+  // console.log(data)
   // }, []);
 
   // Scroll to topRef element when currentPage changes
@@ -71,8 +72,6 @@ const ArticlePage = ({
         {/* Interface 2 */}
         {isLoading ? (
           <SkeletonCardArticle count={3} />
-        ) : isError ? (
-          error
         ) : (
           paginatedData.map((data, index) => (
             <ArticleCard

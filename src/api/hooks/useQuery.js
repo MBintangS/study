@@ -17,7 +17,7 @@ const useQuery = (fn, config = defaultConfig, getIdToken, ...params) => {
     error: "",
   });
   const { onSuccess, onError, autoFetch, needToken } = config;
-  const maxRetries = 3;
+  const maxRetries = 1;
   let retryCount = 0;
 
   const runQuery = async (...params) => {
@@ -72,12 +72,13 @@ const useQuery = (fn, config = defaultConfig, getIdToken, ...params) => {
     if (retryCount < maxRetries) {
       retryQuery();
     } else {
+      const errorMessage = data?.message || "Oops, Something went wrong. Please try again";
       setState({
         data: null,
         isLoading: false,
         isSuccess: false,
         isError: true,
-        error: "Terjadi Kesalahan",
+        error: errorMessage,
       });
       onError && onError(data);
     }
@@ -88,12 +89,13 @@ const useQuery = (fn, config = defaultConfig, getIdToken, ...params) => {
     if (retryCount < maxRetries) {
       retryQuery();
     } else {
+      const errorMessage = error?.message || "Failed to load data. Please try again.";
       setState({
         data: null,
         isLoading: false,
         isSuccess: false,
         isError: true,
-        error: "Terjadi Kesalahan",
+        error: errorMessage,
       });
       onError && onError(error);
     }

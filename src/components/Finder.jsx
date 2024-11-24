@@ -1,4 +1,3 @@
-import { Option } from "@material-tailwind/react";
 import React, { useEffect, useState } from "react";
 import Select from "react-select";
 import { useNavigate } from "react-router-dom";
@@ -148,7 +147,7 @@ const Finder = () => {
             value={userInput}
             onChange={handleInputChange}
           />
-
+          
           <div className="grid grid-cols-1 md:grid-cols-3 col-span-1 lg:col-span-3 gap-4">
             {/* Type of Program */}
             <div className="col-span-1 custom-width-material-tailwind rounded-xl relative flex-row items-center justify-center cursor-pointer focus:outline-none bg-white py-3 w-full">
